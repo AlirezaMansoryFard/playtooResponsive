@@ -10,7 +10,7 @@ $("#hamburger").click(function () {
 $("#close").click(function () {
   $(".sidebar").animate(
     {
-      left: "-32rem",
+      left: "-60rem",
     },
     500
   );
