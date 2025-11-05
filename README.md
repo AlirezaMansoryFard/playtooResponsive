@@ -7,7 +7,7 @@ Play Too is a fictional platform that displays tournaments, results, and friends
 
 ### 🌐 **Live Demo**
 
-👉 [Click here to view the project](https://your-demo-link.com)
+👉 [Click here to view the project](https://magical-boba-10e6c1.netlify.app/)
 
 ---
 
@@ -63,7 +63,7 @@ Play Too ist eine fiktive Plattform, die Turniere, Ergebnisse und Freunde anzeig
 
 ### 🌐 **Live-Demo**
 
-👉 [Projekt hier ansehen](https://your-demo-link.com)
+👉 [Projekt hier ansehen](https://magical-boba-10e6c1.netlify.app/)
 
 ---
 
