@@ -1,0 +1,157 @@
+//!  Popular Styles
+.popular {
+  width: 100%;
+  padding: 2.5rem 0;
+
+  //!  Popular Content Styles
+  &__content {
+    width: $mainWidth;
+    @include Responsive(laptop) {
+      width: 89vw;
+    }
+    margin: 0 auto;
+    &-items {
+      @include centerizeTag(space-between);
+      margin-top: 2.5rem;
+      @include Responsive(tablet) {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 2rem;
+      }
+    }
+    &-item {
+      width: 32%;
+      @include Responsive(tablet) {
+        width: 48%;
+      }
+      @include Responsive(phone) {
+        width: 75%;
+      }
+    }
+    &-image {
+      width: 100%;
+      height: 25rem;
+      background-color: $colorPrimary;
+      border-radius: 0.8rem;
+      padding: 1.5rem;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      transition: all 400ms ease;
+      &.active {
+        border: 0.1rem solid $colorSecondary;
+      }
+
+      &:hover {
+        transform: translateY(-0.5rem);
+        .popular__content-on {
+          width: 100%;
+          cursor: pointer;
+          opacity: 0.6;
+        }
+      }
+    }
+    &-pic {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 0.8rem;
+    }
+    &-on {
+      width: 20rem;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      right: 0;
+      transition: all 791ms ease;
+
+      &-shape {
+        width: 100%;
+        height: 100%;
+        background-color: $colorSecondary;
+        position: absolute;
+        top: 0;
+        right: 0;
+        clip-path: polygon(30% 0, 100% 0, 100% 100%, 0 100%);
+        &--1 {
+          z-index: 10;
+          color: $colorWhite;
+          @include centerizeTag();
+          font-size: $fontSizeTitle;
+          font-weight: bold;
+        }
+        &--2 {
+          right: 0.4rem;
+          background-color: $colorSecondaryLight;
+          transition: all 572ms ease;
+          position: absolute;
+        }
+      }
+    }
+
+    &-info {
+      @include centerizeTag(space-between);
+      margin-top: 2rem;
+    }
+    &-left {
+      width: 50%;
+    }
+    &-title {
+      color: $colorWhite;
+      font-size: $fontSizeLg;
+      font-weight: bold;
+    }
+    &-description {
+      font-size: $fontSizeSm;
+      margin: 1.5rem 0;
+      color: $colorSubtitle;
+    }
+    &-lists {
+      @include centerizeTag(flex-start);
+      gap: 1.5rem;
+    }
+    &-circle {
+      width: 2rem;
+      height: 2rem;
+      background-color: $colorGreen;
+      border-radius: 100%;
+      @include centerizeTag();
+      box-shadow: 0 0 0.9rem $colorGreen;
+      &- {
+        width: 1.2rem;
+        height: 1.2rem;
+        background-color: $colorGreen;
+        border-radius: 100%;
+      }
+    }
+    &-rate,
+    &-online {
+      font-size: $fontSizeSm;
+      color: $colorWhite;
+    }
+
+    &-right {
+      width: 50%;
+      @include Responsive(phone) {
+        width: 25%;
+      }
+      @include centerizeTag();
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    &-match {
+      @include centerizeTag();
+      gap: 1rem;
+    }
+    &-emblem {
+      width: 1.5rem;
+    }
+    &-team {
+      color: $colorWhite;
+      font-weight: bold;
+    }
+    &-score {
+      color: $colorScore;
+    }
+  }
+}

@@ -1,0 +1,12 @@
+.main {
+  display: flex;
+  @include Responsive(laptop) {
+    position: relative;
+  }
+}
+.devgame {
+  width: 83%;
+  @include Responsive(laptop) {
+    width: 100%;
+  }
+}

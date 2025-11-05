@@ -1,0 +1,43 @@
+html {
+  font-size: 62.5%;
+  @include Responsive(tabletLand) {
+    font-size: 57.5%;
+  }
+  @include Responsive(tablet) {
+    font-size: 55%;
+  }
+  @include Responsive(phoneLand) {
+    font-size: 45%;
+  }
+  @include Responsive(phone) {
+    font-size: 42%;
+  }
+}
+* {
+  box-sizing: border-box;
+}
+
+ul,
+li {
+  padding: 0;
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: $colorBlack;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+body {
+  background-color: $colorBg;
+  font-family: $fontRubik;
+}

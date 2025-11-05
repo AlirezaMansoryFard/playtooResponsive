@@ -1,0 +1,42 @@
+//!  Titles Styles
+.dev-title {
+  @include centerizeTag(space-between);
+
+  &__list {
+    @include centerizeTag();
+    gap: 2.5rem;
+    @include Responsive(phone) {
+      gap: 1.5rem;
+    }
+  }
+  &__item {
+    font-size: $fontSizeDefault;
+    @include Responsive(phone) {
+      font-size: 1.2rem;
+    }
+    color: $colorWhite;
+    font-weight: bold;
+    padding-top: 1rem;
+    cursor: pointer;
+    &.active {
+      color: $colorSecondary;
+      border-top: 0.2rem solid $colorSecondary;
+    }
+  }
+  &__btns {
+    @include centerizeTag();
+    gap: 1rem;
+  }
+  &__btn {
+    width: 4rem;
+    height: 4rem;
+    color: $colorWhite;
+    @include centerizeTag();
+    border-radius: 0.6rem;
+    cursor: pointer;
+
+    &.active {
+      background-color: $colorSecondary;
+    }
+  }
+}

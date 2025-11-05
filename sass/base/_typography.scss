@@ -1,0 +1,16 @@
+.text-white {
+  color: $colorWhite;
+  font-weight: bold;
+  font-size: $fontSizeTitle;
+  @include Responsive(phone) {
+    font-size: 2.2rem;
+  }
+}
+.text-pink {
+  color: $colorTertiary;
+  font-weight: bold;
+  font-size: $fontSizeTitle;
+  @include Responsive(phone) {
+    font-size: 2.2rem;
+  }
+}

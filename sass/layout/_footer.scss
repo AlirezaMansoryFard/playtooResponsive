@@ -1,0 +1,81 @@
+//! Footer Styles
+
+.footer {
+  width: 100%;
+
+  padding: 3rem 0;
+  margin-top: 2.5rem;
+  background-color: $colorPrimary;
+
+  //! Footer ContentStyles
+  &__content {
+    width: 120rem;
+    @include Responsive(laptop) {
+      width: 89vw;
+    }
+    margin: 0 auto;
+    @include centerizeTag(space-between);
+    @include Responsive(tablet) {
+      flex-direction: column;
+      gap: 2rem;
+    }
+    &-pic {
+      @include centerizeTag();
+      flex-direction: column;
+      gap: 2rem;
+    }
+    &-img {
+      width: 15rem;
+      @include Responsive(tablet) {
+        max-width: 60%;
+        height: auto;
+      }
+    }
+    &-sublogo {
+      color: $colorWhite;
+      font-weight: bold;
+      font-size: 1.8rem;
+    }
+    &-list,
+    &-copy {
+      display: flex;
+      gap: 2.5rem;
+      font-size: $fontSizeDefault;
+      color: $colorSubtitle;
+      font-weight: bold;
+    }
+    &-link {
+      cursor: pointer;
+    }
+    &-socialmedia {
+      @include centerizeTag();
+      gap: 1.5rem;
+      @include Responsive(tablet) {
+        gap: 3.5rem;
+      }
+    }
+    &-social {
+      width: 4.5rem;
+      height: 4.5rem;
+      background-color: $colorBg;
+      border-radius: 0.5rem;
+      @include centerizeTag();
+      box-shadow: 0 0 0.5rem $colorShadow;
+      transition: all 541ms ease;
+
+      &:hover {
+        cursor: pointer;
+        transform: translateY(-0.5rem);
+        .footer__content-icon {
+          transform: rotateY(360deg);
+          color: $colorSecondaryLight;
+        }
+      }
+    }
+    &-icon {
+      color: $colorWhite;
+      font-size: 2rem;
+      transition: all 541ms ease;
+    }
+  }
+}

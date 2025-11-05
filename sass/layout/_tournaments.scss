@@ -1,0 +1,380 @@
+.tournaments {
+  margin-top: 3.5rem;
+  //!  Tournaments Content Styles
+  &__content {
+    width: $mainWidth;
+    @include Responsive(laptop) {
+      width: 89vw;
+    }
+    margin: 0 auto;
+    &-main {
+      width: 100%;
+      @include centerizeTag(space-between);
+      margin-top: 2rem;
+      @include Responsive(tablet) {
+        display: block;
+      }
+    }
+    &-left {
+      height: 100%;
+      width: 70%;
+      @include Responsive(tablet) {
+        width: 100%;
+      }
+    }
+  }
+
+  //!  Tournaments Battle Styles
+  &__battle {
+    width: 100%;
+    background-color: $colorPrimary;
+    border-radius: 1rem;
+    padding: 2.5rem;
+
+    @include centerizeTag(space-between);
+    @include Responsive(tablet) {
+      display: block;
+    }
+    &-left {
+      width: 60%;
+      @include Responsive(tablet) {
+        width: 100%;
+      }
+      height: 100%;
+    }
+    &-right {
+      width: 37%;
+      @include Responsive(tablet) {
+        width: 100%;
+      }
+      height: 100%;
+    }
+    &-title {
+      color: $colorWhite;
+      margin-bottom: 0.5rem;
+    }
+    &-subtitle {
+      color: $colorGreen;
+      font-style: 1.3rem;
+      font-weight: bold;
+    }
+    &-teams {
+      @include centerizeTag(space-between);
+      margin-top: 5rem;
+    }
+
+    &-img {
+      width: 50%;
+      object-fit: cover;
+    }
+    &-info {
+      margin-top: 2.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    &-name {
+      color: $colorWhite;
+      font-weight: bold;
+    }
+    &-count {
+      color: $colorSubtitle;
+      font-size: 1.3rem;
+      font-weight: bold;
+    }
+    &-sward {
+      width: 5rem;
+    }
+    &-progress {
+      width: 100%;
+      height: 1.5rem;
+      background-color: $colorBg;
+      border-radius: 1.8rem;
+      margin-top: 3rem;
+      @include Responsive(tablet) {
+        margin: 3rem 0;
+      }
+      &-percent {
+        width: 70%;
+        background: linear-gradient(
+          120deg,
+          yellow 0%,
+          #e4ec7f 50%,
+          #ffffb7 70%
+        );
+        border-radius: 1.8rem;
+        height: 100%;
+        font-size: $fontSizeSm;
+        @include centerizeTag();
+        font-weight: bold;
+      }
+    }
+    &-thead {
+      width: 100%;
+      height: 3.5rem;
+      @include centerizeTag(space-between);
+      &-icon {
+        width: 3.5rem;
+        height: 100%;
+        border-radius: 0.5rem;
+        background-color: $colorSecondary;
+        color: $colorWhite;
+        @include centerizeTag();
+        font-size: $fontSizeDefault;
+        cursor: pointer;
+      }
+      &-group {
+        width: 75%;
+        height: 100%;
+        background-color: $colorSecondary;
+        @include centerizeTag();
+        color: $colorWhite;
+        border-radius: 0.5rem;
+        font-weight: bold;
+        font-size: 1.5rem;
+      }
+    }
+    &-items {
+      margin-top: 1.5rem;
+    }
+    &-item {
+      height: 5rem;
+      @include centerizeTag(space-between);
+      padding: 1rem;
+      background-color: $colorBg;
+      border-radius: 0.5rem;
+      margin-top: 0.5rem;
+      transition: all 472ms ease;
+      &.active {
+        background-color: $colorRed;
+        .tournaments__battle-number,
+        .tournaments__battle-scores {
+          background-color: $colorRedDark;
+        }
+      }
+      &:hover {
+        background-color: $colorRedLight;
+        cursor: pointer;
+        .tournaments__battle-number,
+        .tournaments__battle-scores {
+          background-color: $colorRedDark;
+        }
+      }
+    }
+    &-statistics {
+      @include centerizeTag(flex-start);
+      gap: 1.5rem;
+      height: 100%;
+    }
+    &-points {
+      @include centerizeTag(flex-start, center);
+      gap: 1rem;
+      height: 100%;
+    }
+    &-number,
+    &-scores {
+      width: 3rem;
+      height: 100%;
+      background-color: $colorPrimary;
+      @include centerizeTag();
+      color: $colorWhite;
+      border-radius: 0.3rem;
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+    &-image,
+    &-coins {
+      width: 2.3rem;
+      object-fit: cover;
+    }
+    &-teamname,
+    &-coins-count {
+      color: $colorWhite;
+      font-weight: bold;
+      font-size: 1.4rem;
+    }
+  }
+
+  //!  Tournaments Info Styles
+  &__info {
+    &-item {
+      @include centerizeTag(space-between);
+      margin-top: 2rem;
+      background-color: $colorPrimary;
+      padding: 2rem;
+      border-radius: 1rem;
+      position: relative;
+      overflow: hidden;
+    }
+    &-game {
+      @include centerizeTag(flex-start);
+      gap: 1rem;
+    }
+    &-pic {
+      width: 8rem;
+      object-fit: cover;
+    }
+    &-description {
+      @include centerizeTag(center, flex-start);
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    &-team {
+      color: $colorWhite;
+      font-weight: bold;
+    }
+    &-players {
+      color: $colorSubtitle;
+      font-size: $fontSizeSm;
+    }
+    &-details {
+      @include centerizeTag();
+      flex-direction: column;
+      gap: 1rem;
+      position: relative;
+      &::before {
+        content: "";
+        width: 0.2rem;
+        height: 10rem;
+        background-color: $colorSubtitle;
+        position: absolute;
+        left: -5rem;
+        transform: rotate(18deg);
+        opacity: 0.4;
+      }
+    }
+    &-key {
+      color: $colorWhite;
+      font-weight: bold;
+    }
+    &-value {
+      color: $colorSubtitle;
+      font-weight: bold;
+    }
+    &-percent {
+      width: 5rem;
+    }
+    &-bg1 {
+      width: 15rem;
+      height: 100%;
+      background: linear-gradient(
+        110deg,
+        $colorPurpleDark 0,
+        $colorPurpleDark 27%,
+        $colorPurpleLight 27%,
+        $colorPurpleLight 100%
+      );
+      position: absolute;
+      top: 0;
+      right: 0;
+      clip-path: polygon(30% 0, 100% 0, 100% 100%, 0 100%);
+      @include centerizeTag();
+      font-weight: bold;
+      color: $colorWhite;
+      font-size: $fontSizeTitle;
+      &.bg2 {
+        background: linear-gradient(
+          110deg,
+          $colorSecondaryLight 0,
+          $colorSecondaryLight 27%,
+          $colorSecondary 27%,
+          $colorSecondary 100%
+        );
+      }
+    }
+
+    &-more {
+      width: 100%;
+      padding: 2rem 0;
+      @include centerizeTag();
+      color: $colorWhite;
+      font-size: $fontSizeDefault;
+      font-weight: bold;
+      background-color: $colorSecondary;
+      margin-top: 1rem;
+      border-radius: 1rem;
+      cursor: pointer;
+    }
+  }
+  //!  Tournaments Closing Styles
+
+  &__closing {
+    height: 100%;
+    width: 28%;
+    background-color: $colorPrimary;
+    border-radius: 1rem;
+    padding: 2.5rem;
+    @include Responsive(tablet) {
+      width: 100%;
+      margin-top: 2rem;
+    }
+
+    &-title {
+      color: $colorWhite;
+      font-size: $fontSizeTitle;
+      margin-bottom: 1rem;
+      line-height: 3.5rem;
+    }
+    &-subtitle {
+      font-size: $fontSizeDefault;
+      color: $colorGreen;
+      font-weight: bold;
+    }
+    &-items {
+      margin-top: 3rem;
+    }
+    &-item {
+      margin-bottom: 3.5rem;
+    }
+    &-teams {
+      @include centerizeTag(space-between);
+    }
+    &-names {
+      @include centerizeTag();
+      flex-direction: column;
+      margin-top: 2.5rem;
+    }
+    &-name {
+      font-size: 2rem;
+      font-weight: bold;
+      color: $colorWhite;
+      margin-bottom: 0.5rem;
+    }
+    &-number {
+      font-weight: bold;
+      font-size: 1.4rem;
+      color: $colorSubtitle;
+    }
+    &-score {
+      span {
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: $colorWhite;
+        letter-spacing: 0.4rem;
+        position: relative;
+        top: -3rem;
+      }
+    }
+    &-link {
+      width: 100%;
+      padding: 1.5rem 0;
+      @include centerizeTag();
+      background: linear-gradient(
+        to right,
+        #bf953f,
+        #fcf6ba 20%,
+        #bf953f 50%,
+        #fcf6ba 80%,
+        #bf953f 100%
+      );
+      border-radius: 0.5rem;
+      font-weight: bold;
+      transition: all 681ms ease-in-out;
+      &:hover {
+        background: linear-gradient(to right, #fcf6ba, #fff 30%, #fcf6ba 100%);
+        letter-spacing: 0.3rem;
+      }
+    }
+  }
+}
