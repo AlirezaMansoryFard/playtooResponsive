@@ -412,6 +412,11 @@ body {
     width: 23%;
   }
 }
+@media only screen and (max-width: 48em) {
+  .sidebar {
+    width: 40%;
+  }
+}
 .sidebar__playtoo {
   display: flex;
   align-items: center;
